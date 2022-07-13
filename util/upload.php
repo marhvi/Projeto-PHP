@@ -35,7 +35,7 @@ function uploadArquivo($file)
         echo 'não é valido ';
     }
 
-    $localSalvar = sprintf('.' . DIRECTORY_SEPARATOR . 'arquivos' . DIRECTORY_SEPARATOR . '%s.%s', 'download', $ext);
+    $localSalvar = sprintf('.' . DIRECTORY_SEPARATOR . 'arquivo' . DIRECTORY_SEPARATOR . '%s.%s', 'download', $ext);
 
     if (move_uploaded_file($file['tmp_name'], $localSalvar)) {
         return substr($localSalvar, 2);

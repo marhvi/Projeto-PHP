@@ -1,17 +1,18 @@
 <?php
 require_once('Connection.php');
 
-function fnAddLivro($nome, $foto, $autor, $tipo)
+function fnAddLivro($nome, $foto, $autor, $tipo, $arqv)
 {
     $con = getConnection();
 
-    $sql = "insert into livros (nome, foto, autor, tipo) values (:pNome, :pFoto, :pAutor, :pTipo)";
+    $sql = "insert into livros (nome, foto, autor, tipo, arqv) values (:pNome, :pFoto, :pAutor, :pTipo, :pArqv)";
 
     $stmt = $con->prepare($sql);
     $stmt->bindParam(":pNome", $nome);
     $stmt->bindParam(":pFoto", $foto);
     $stmt->bindParam(":pAutor", $autor);
     $stmt->bindParam(":pTipo", $tipo);
+    $stmt->bindParam(":pArqv", $arqv);
 
     return $stmt->execute();
 }
@@ -64,11 +65,11 @@ function fnLocalizaLivroPorId($id)
     return null;
 }
 
-function fnUpdateLivro($id, $nome, $foto, $autor, $tipo)
+function fnUpdateLivro($id, $nome, $foto, $autor, $tipo, $arqv)
 {
     $con = getConnection();
 
-    $sql = "update livros set nome = :pNome, foto = :pFoto, autor = :pAutor, tipo = :pTipo where id = :pID";
+    $sql = "update livros set nome = :pNome, foto = :pFoto, autor = :pAutor, tipo = :pTipo, arqv = :pArqv where id = :pID";
 
     $stmt = $con->prepare($sql);
     $stmt->bindParam(":pID", $id);
@@ -76,6 +77,7 @@ function fnUpdateLivro($id, $nome, $foto, $autor, $tipo)
     $stmt->bindParam(":pFoto", $foto);
     $stmt->bindParam(":pAutor", $autor);
     $stmt->bindParam(":pTipo", $tipo);
+    $stmt->bindParam(":pArqv", $arqv);
 
     return $stmt->execute();
 }

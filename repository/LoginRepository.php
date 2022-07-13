@@ -48,19 +48,3 @@ function fnRegistrarUsuario($email, $senha)
 
     return $stmt->execute();
 }
-
-function fnLocalizaLoginPorADM($adm)
-{
-    $con = getConnection();
-
-    $sql = "select adm from login where id = :pID";
-
-    $stmt = $con->prepare($sql);
-    $stmt->bindParam(":pID", $id);
-
-    if ($stmt->execute()) {
-        return $stmt->fetch(PDO::FETCH_OBJ);
-    }
-
-    return null;
-}

@@ -21,7 +21,7 @@
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Foto do Livro"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6"
+                        <rect width="100%" height="100%" fill="#868e96"></rect><text x="30%" y="50%" fill="#dee2e6"
                             dy=".3em">Foto do Livro</text>
                     </svg>
                 </div>
@@ -31,9 +31,9 @@
                     <div id="helperFoto" class="form-text">Importe a foto</div>
                 </div>
                 <div class="mb-3 form-group">
-                    <label for="zipId" class="form-label">Livro</label>
-                    <input type="file" name="arquivo" id="zipId" class="form-control">
-                    <div id="helperZip" class="form-text">Importe o Livro </div>
+                    <label for="arqvId" class="form-label">Livro</label>
+                    <input type="file" name="arquivo" id="arqvId" class="form-control">
+                    <div id="helperArqv" class="form-text">Importe o Livro </div>
                 </div>
                 <div class="mb-3 form-group">
                     <label for="nomeId" class="form-label">Nome</label>

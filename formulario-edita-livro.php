@@ -34,9 +34,9 @@ $livro = fnLocalizaLivroPorId($id);
                     <input type="hidden" name="idLivro" id="livroId" value="<?= $livro->id ?>">
                 </div>
                 <div class="mb-3 form-group">
-                    <label for="zipId" class="form-label">Livro</label>
-                    <input type="file" name="arquivo" id="zipId" class="form-control">
-                    <div id="helperZip" class="form-text">Importe o Livro </div>
+                    <label for="arqvId" class="form-label">Livro</label>
+                    <input type="file" name="arquivo" id="arqvId" class="form-control">
+                    <div id="helperArqv" class="form-text">Importe o Livro </div>
                 </div>
                 <div class="mb-3 form-group">
                     <label for="nomeId" class="form-label">Nome</label>

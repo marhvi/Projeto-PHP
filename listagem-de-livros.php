@@ -1,6 +1,7 @@
 <?php
 include('config.php');
 require_once('repository/LivroRepository.php');
+require_once('repository/LoginRepository.php');
 
 $nome = filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 ?>
@@ -37,12 +38,15 @@ $nome = filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
                     <td><?= $livro->autor ?></td>
                     <td><?= $livro->tipo ?></td>
                     <td><?= $livro->created_at ?></td>
-
+                    <? if (fnLogin("livroteca@gmail.com", "livroteca@123")) : ?>
                     <td><a href="#" onclick="gerirUsuario(<?= $livro->id ?>, 'edit');">Editar</a></td>
                     <td><a href="#"
                             onclick="return confirm('Deseja realmente excluir?') ? gerirLivro(<?= $livro->id ?>, 'del') : '';">Excluir</a>
                     </td>
-
+                    <td>
+                        <a href="<? $livro->arqv ?>" download>Dowload</a>
+                    </td>
+                    <? endif ?>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -1,0 +1,16 @@
+{
+    "name": "mv/livroteca",
+    "description": "biblioteca virtual",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "marhvi",
+            "email": "mvjs2004@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "dev-master"
+    }
+}

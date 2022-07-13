@@ -4,9 +4,10 @@ require_once('vendor/autoload.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 
+
 date_default_timezone_set('America/Sao_Paulo');
 
-define('GUSER', 'mvjs2004@gmail.com');
+define('GUSER', 'livroteca@gmail.com');
 define('GPWD', 'amdmwrowrroeojn');
 
 function send($usuario)
@@ -14,7 +15,7 @@ function send($usuario)
     $mail = new PHPMailer;
 
     $mail->isSMTP();
-    $mail->SMTPDebug = 0;
+    $mail->SMTPDebug = 2;
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPSecure = 'tls';
     $mail->Port = '587';
@@ -22,7 +23,7 @@ function send($usuario)
     $mail->Username = GUSER;
     $mail->Password = GPWD;
 
-    $mail->setFrom('recupera-senha@senac.com.br', 'Livroteca');
+    $mail->setFrom('recupera-senha@senac.com.br', 'livroteca');
     $mail->addAddress($usuario->email);
     $mail->Subject = 'Recuperação de senha';
 
@@ -68,8 +69,8 @@ function constroiMensagem($senha)
 
 function redirect($status, $msg)
 {
-    setcookie('notify', $msg, time() + 10, "/livroteca/recupera-senha-livros.php", 'localhost');
-    setcookie('status', $status, time() + 10, "/livroteca/recupera-senha-livros.php", 'localhost');
-    header("location: recupera-senha-livros.php");
+    setcookie('notify', $msg, time() + 10, "/livroteca/recupera-email-livros.php", 'localhost');
+    setcookie('status', $status, time() + 10, "/livroteca/recupera-email-livros.php", 'localhost');
+    header("location: recupera-senha-.php");
     exit;
 }

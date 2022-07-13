@@ -30,7 +30,7 @@
             </ul>
             <form id="formSearchName" class="d-flex" role="search" method="post" action="localiza-livro.php">
                 <input id="searchName" class="form-control me-2" name="nomeLivro" type="search"
-                    placeholder="Informe o nome" aria-label="Search">
+                    placeholder="procurar..." aria-label="Search">
                 <a class="btn btn-outline-danger" href="logout.php">Logout</a>
             </form>
         </div>
